@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="image-container">
+            <img data-testid="slackProfilePicture" src="./IMG-20230317-WA0009.jpg" alt="My image">
+        </div>
+        <p data-testid="slackDisplayName">CodeKage</p>
+        <a href="mailto:luqmanola60@gmail.com" data-testid="slackEmail">luqmanola60@gmail.com</a>
+        <p data-testid="currentTimeUTC"><span id="currentHours"></span> : <span id="currentMinutes"> </span> <span>: </span><span id="currentSeconds"></span></p>
+        <p id="currentDay" data-testid="currentDay"></p>
+        <div class="goals">
+            <h2>My tech goals for the next 2 years includes:</h2>
+            <ul class="goals-list">
+                <li>Becoming a Software Developer</li>
+                <li>Building at least 6 monetized solution</li>
+                <li>Worked/working in at least one of these companies(Amazon, Microsoft, Google, Facebook) as a software developer</li>
+                <li>Owning a startup company</li>
+            </ul>
+        </div>
+
+        <div id="link">
+            <p>Links:</p>
+            <div class="links">
+                <a href="hng.tech/learn" data-testid="hngLink">HNG Link</a>
+                <a href="keyword.dog" data-testid="keywordLink">KeyWord Link</a>
+                <a href="scrapeanyweb.site" data-testid="scrapeanywebLink">Scrape Any Web Link</a>    
+            </div>
+         </div>
+    </div>
+
+    <script>
+        function today(){
+            let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
+            let date = new Date()
+            let currentHours = date.getUTCHours()
+            let currentMinutes = date.getUTCMinutes()
+            let currentSeconds = date.getUTCSeconds()
+            let currentWeekNumber = date.getDay()
+            let currentWeekDay = daysOfTheWeek[currentWeekNumber]
+
+            document.getElementById("currentDay").innerHTML = currentWeekDay
+            document.getElementById("currentHours").innerHTML = currentHours
+            document.getElementById("currentMinutes").innerHTML = currentMinutes
+            document.getElementById("currentSeconds").innerHTML = currentSeconds
+
+        
+        }
+        setInterval(today, 1000)
+        console.log(currentMinutes)
+    </script>
+</body>
+</html>
